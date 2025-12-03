@@ -7,7 +7,13 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
-const routerBase = import.meta.env.BASE_URL || "/";
+const routerBase =
+  import.meta.env.BASE_URL && import.meta.env.BASE_URL !== "/"
+    ? import.meta.env.BASE_URL
+    : (() => {
+        const parts = window.location.pathname.split("/").filter(Boolean);
+        return parts.length > 0 ? `/${parts[0]}/` : "/";
+      })();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
