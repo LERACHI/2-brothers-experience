@@ -3,6 +3,13 @@ import heroBurger from "@/assets/hero-burger.jpg";
 
 const MENU_URL = "https://anota.ai/home/funcionalidade/cardapio-digital/";
 
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
 export const HeroSection = () => {
   return (
     <section
@@ -50,13 +57,14 @@ export const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <a
-        href="#historia"
+      <button
+        type="button"
+        onClick={() => scrollToSection("historia")}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground animate-bounce"
         aria-label="Scroll para baixo"
       >
         <ChevronDown className="w-8 h-8" />
-      </a>
+      </button>
     </section>
   );
 };

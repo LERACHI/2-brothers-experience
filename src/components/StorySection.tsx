@@ -1,5 +1,12 @@
 import bastidores from "@/assets/bastidores.jpg";
 
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
 export const StorySection = () => {
   return (
     <section id="historia" className="py-20 md:py-32 bg-secondary">
@@ -43,12 +50,13 @@ export const StorySection = () => {
                 que só 2 BROTHERS podem compartilhar.
               </p>
             </div>
-            <a
-              href="#destaques"
+            <button
+              type="button"
+              onClick={() => scrollToSection("destaques")}
               className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all"
             >
               Conheça nossos destaques →
-            </a>
+            </button>
           </div>
         </div>
       </div>

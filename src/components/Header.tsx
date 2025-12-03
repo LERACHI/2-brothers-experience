@@ -15,6 +15,13 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -30,8 +37,9 @@ export const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <a
-          href="#inicio"
+        <button
+          type="button"
+          onClick={() => scrollToSection("inicio")}
           className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-full"
         >
           <img
@@ -42,18 +50,19 @@ export const Header = () => {
           <span className="font-display text-2xl tracking-wider text-foreground hidden sm:block">
             2 BROTHERS
           </span>
-        </a>
+        </button>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <button
               key={item.href}
-              href={item.href}
+              type="button"
+              onClick={() => scrollToSection(item.href.replace("#", ""))}
               className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
             >
               {item.label}
-            </a>
+            </button>
           ))}
           <a
             href={MENU_URL}
@@ -80,14 +89,17 @@ export const Header = () => {
         <div className="md:hidden nav-blur border-t border-border mt-3">
           <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.href}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors py-2 text-lg"
-                onClick={() => setIsMobileMenuOpen(false)}
+                type="button"
+                className="text-foreground hover:text-primary transition-colors py-2 text-lg text-left"
+                onClick={() => {
+                  scrollToSection(item.href.replace("#", ""));
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 {item.label}
-              </a>
+              </button>
             ))}
             <a
               href={MENU_URL}
