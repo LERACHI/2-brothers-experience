@@ -1,5 +1,7 @@
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 
+const WHATSAPP_URL = "https://anota.ai/home/funcionalidade/atendente-virtual/";
+
 export const ContactSection = () => {
   return (
     <section id="contato" className="py-20 md:py-32 bg-background">
@@ -54,10 +56,10 @@ export const ContactSection = () => {
 
             {/* Big CTA */}
             <a
-              href="https://wa.me/5545991472777?text=Olá! Vim pelo site e gostaria de fazer um pedido! 🍔"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full py-5 rounded-xl bg-primary text-primary-foreground font-bold text-xl hover:scale-[1.02] transition-transform"
+              className="flex items-center justify-center gap-3 w-full py-5 rounded-xl bg-[#25D366] text-white font-bold text-xl hover:scale-[1.02] transition-transform"
             >
               <MessageCircle className="w-7 h-7" />
               Fazer Pedido pelo WhatsApp

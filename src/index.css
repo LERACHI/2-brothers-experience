@@ -80,13 +80,13 @@
 @layer components {
   .btn-whatsapp {
     @apply fixed bottom-6 right-6 z-50 flex items-center gap-3 px-6 py-4 rounded-full font-semibold text-lg transition-all duration-300;
-    background: var(--gradient-amber);
-    box-shadow: var(--shadow-glow);
+    background: linear-gradient(135deg, #25D366 0%, #1EBE57 100%);
+    box-shadow: 0 0 40px hsl(142 72% 46% / 0.35);
   }
 
   .btn-whatsapp:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 60px hsl(35 100% 50% / 0.5);
+    box-shadow: 0 0 60px hsl(142 72% 46% / 0.55);
   }
 
   .section-title {
@@ -137,8 +137,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 40px hsl(35 100% 50% / 0.3); }
-    50% { box-shadow: 0 0 60px hsl(35 100% 50% / 0.6); }
+    0%, 100% { box-shadow: 0 0 40px hsl(142 72% 46% / 0.35); }
+    50% { box-shadow: 0 0 60px hsl(142 72% 46% / 0.6); }
   }
 
   @keyframes fade-up {

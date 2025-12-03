@@ -1,17 +1,14 @@
 import { MessageCircle } from "lucide-react";
 
-const WHATSAPP_NUMBER = "5545991472777";
-const WHATSAPP_MESSAGE = "Olá! Vim pelo site e gostaria de fazer um pedido! 🍔";
+const WHATSAPP_URL = "https://anota.ai/home/funcionalidade/atendente-virtual/";
 
 export const WhatsAppButton = () => {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-
   return (
     <a
-      href={whatsappUrl}
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn-whatsapp animate-pulse-glow text-primary-foreground"
+      className="btn-whatsapp animate-pulse-glow text-white"
       aria-label="Fazer pedido pelo WhatsApp"
     >
       <MessageCircle className="w-7 h-7" />

@@ -10,7 +10,7 @@ export const StorySection = () => {
             <div className="card-highlight overflow-hidden">
               <img
                 src={bastidores}
-                alt="Dois irmãos preparando burgers na cozinha"
+                alt="2 BROTHERS preparando burgers na cozinha"
                 className="w-full h-[400px] md:h-[500px] object-cover"
               />
             </div>
@@ -25,12 +25,12 @@ export const StorySection = () => {
               Nossa História
             </span>
             <h2 className="section-title text-foreground">
-              DOIS IRMÃOS,<br />
+              2 BROTHERS,<br />
               <span className="text-gradient">UMA PAIXÃO</span>
             </h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
-                Em 2020, dois irmãos decidiram transformar uma paixão em realidade. 
+                Em 2020, 2 BROTHERS decidiram transformar uma paixão em realidade. 
                 O sonho? Criar o smash burger perfeito em Foz do Iguaçu.
               </p>
               <p>
@@ -40,7 +40,7 @@ export const StorySection = () => {
               </p>
               <p>
                 Cada burger é preparado com amor, cuidado e a receita secreta 
-                que só dois irmãos podem compartilhar.
+                que só 2 BROTHERS podem compartilhar.
               </p>
             </div>
             <a

@@ -2,6 +2,8 @@ import burger1 from "@/assets/burger-1.jpg";
 import fries from "@/assets/fries.jpg";
 import heroBurger from "@/assets/hero-burger.jpg";
 
+const MENU_URL = "https://anota.ai/home/funcionalidade/cardapio-digital/";
+
 const highlights = [
   {
     title: "Smash Clássico",
@@ -65,7 +67,7 @@ export const HighlightsSection = () => {
 
         <div className="text-center mt-12">
           <a
-            href="https://share.google/UI2GmIBdLhMwnhHy1"
+            href={MENU_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:scale-105 transition-transform"

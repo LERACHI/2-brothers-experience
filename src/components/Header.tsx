@@ -2,6 +2,15 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
+const MENU_URL = "https://anota.ai/home/funcionalidade/cardapio-digital/";
+
+const navItems = [
+  { label: "Início", href: "#inicio" },
+  { label: "Nossa História", href: "#historia" },
+  { label: "Destaques", href: "#destaques" },
+  { label: "Contato", href: "#contato" },
+];
+
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,13 +23,6 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { label: "Início", href: "#inicio" },
-    { label: "Nossa História", href: "#historia" },
-    { label: "Destaques", href: "#destaques" },
-    { label: "Contato", href: "#contato" },
-  ];
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -28,8 +30,15 @@ export const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <a href="#inicio" className="flex items-center gap-3">
-          <img src={logo} alt="2 Brothers" className="h-12 w-12 rounded-full object-cover" />
+        <a
+          href="#inicio"
+          className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-full"
+        >
+          <img
+            src={logo}
+            alt="2 Brothers"
+            className="h-12 w-12 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 group-hover:brightness-110 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.6)] group-focus-visible:scale-110 group-focus-visible:brightness-110 group-focus-visible:drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]"
+          />
           <span className="font-display text-2xl tracking-wider text-foreground hidden sm:block">
             2 BROTHERS
           </span>
@@ -47,7 +56,7 @@ export const Header = () => {
             </a>
           ))}
           <a
-            href="https://share.google/UI2GmIBdLhMwnhHy1"
+            href={MENU_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 rounded-full bg-primary text-primary-foreground font-semibold hover:scale-105 transition-transform"
@@ -81,7 +90,7 @@ export const Header = () => {
               </a>
             ))}
             <a
-              href="https://share.google/UI2GmIBdLhMwnhHy1"
+              href={MENU_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-center mt-2"
